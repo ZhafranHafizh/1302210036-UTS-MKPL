@@ -52,26 +52,24 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	public void setMonthlySalary(int grade) {	
-		int baseSalary = 0;
+	public void setMonthlySalary(int grade) {
+		int baseSalary = getBaseSalary(grade);
+		monthlySalary = nationality == Nationality.FOREIGNER ? (int) (baseSalary * 1.5) : baseSalary;
+	}
 	
+	private int getBaseSalary(int grade) {
 		switch (grade) {
 			case 1:
-				baseSalary = 3000000;
-				break;
+				return 3000000;
 			case 2:
-				baseSalary = 5000000;
-				break;
+				return 5000000;
 			case 3:
-				baseSalary = 7000000;
-				break;
+				return 7000000;
 			default:
-				System.err.println("Invalid grade specified");
-				return; // Exit method if grade is invalid
+				throw new IllegalArgumentException("Invalid grade specified");
 		}
-	
-		monthlySalary = isForeigner ? (int) (baseSalary * 1.5) : baseSalary;
 	}
+	
 	
 	
 	public void setAnnualDeductible(int deductible) {	
