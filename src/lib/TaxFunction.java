@@ -2,7 +2,10 @@ package lib;
 
 public class TaxFunction {
 
-	
+	private static final double TAX_RATE = 0.05;
+    private static final int STANDARD_DEDUCTIBLE = 54000000;
+    private static final int MARRIED_DEDUCTIBLE = 4500000;
+    private static final int CHILD_DEDUCTIBLE_PER_CHILD = 1500000;
 	/**
 	 * Fungsi untuk menghitung jumlah pajak penghasilan pegawai yang harus dibayarkan setahun.
 	 * 
